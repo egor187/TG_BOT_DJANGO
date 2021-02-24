@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tg_bot',
+    'game_bot',
 ]
 
 MIDDLEWARE = [
