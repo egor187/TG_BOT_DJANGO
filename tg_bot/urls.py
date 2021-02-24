@@ -20,6 +20,7 @@ app_name = 'tg_bot'
 
 urlpatterns = [
     # path('', )
-    path('games/', include('tg_bot.games_bot.urls')),
+    path('games/', include('game_bot.urls')),
+    path('users/', include('users.urls')),
     path('admin/', admin.site.urls),
 ]
