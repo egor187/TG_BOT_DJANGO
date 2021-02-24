@@ -3,6 +3,9 @@ name = "tg_bot_django"
 version = "0.1.0"
 description = ""
 authors = ["egor187 <py.egor.py@gmail.com>"]
+packages = [
+    { include = "tg_bot" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
