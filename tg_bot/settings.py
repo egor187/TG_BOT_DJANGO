@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'tg_bot',
     'game_bot',
     'users',
+    'bootstrap4',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
