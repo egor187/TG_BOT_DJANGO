@@ -14,11 +14,11 @@ class Games(models.Model):
 
 class GameSession(models.Model):
     created_at = models.DateTimeField()
-    game_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='game')
-
+    game = models.ForeignKey(Games, on_delete=models.CASCADE, related_name='session_game', default='default_game')
 
 
 class GameScores(models.Model):
+    game = models.ForeignKey(Games, on_delete=models.CASCADE, blank=False, related_name='scores_game', default='default_game', to_field='name')
     game_session = models.ForeignKey(GameSession, on_delete=models.CASCADE, related_name='game_session')
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='user')
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='user', to_field='username')
     score = models.IntegerField()
