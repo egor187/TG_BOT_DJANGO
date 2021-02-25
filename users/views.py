@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import CustomUser
 from django.core.paginator import Paginator
 
-class UserListView(ListView):
+class UserListView(LoginRequiredMixin, ListView):
     model = CustomUser
     context_object_name = 'users_list'
     template_name = 'users_list.html'
